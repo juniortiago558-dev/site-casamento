@@ -20,7 +20,7 @@ try {
 
 const WEDDING_DATE_ISO = "2026-08-22T00:00:00-03:00";
 const LOCAL_NOME = "Fazenda Sobradinho";
-const LOCAL_ENDERECO = "Fazenda Sobradinho, (COLOQUE AQUI O ENDEREÇO COMPLETO), Brasil";
+const LOCAL_ENDERECO = "Fazenda Sobradinho, Estrada CT. João Havelange, Pinheiral - RJ, 27197-000, Brasil";
 
 // =========================================
 // PROTEÇÃO
