@@ -291,7 +291,7 @@ footer{ text-align:center; color: var(--muted); padding: 22px 0 8px; font-size:1
 
 .itemImg {
   width: 100%;
-  height: clamp(140px, 30vw, 220px);  /* responsivo: nunca fica gigante */
+  height: 500px;          /* altura fixa - igual em qualquer tela */
   object-fit: cover;      /* corta a imagem mantendo proporção, sem distorcer */
   border-radius: 10px;    /* combina com o resto do visual em cards arredondados */
   margin-bottom: 10px;
