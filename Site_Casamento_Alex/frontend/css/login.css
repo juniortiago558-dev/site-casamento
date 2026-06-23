@@ -1,0 +1,157 @@
+@charset "UTF-8";
+
+:root{
+  --olive-900:#1f2a1d;
+  --olive-800:#2a3a26;
+  --olive-700:#3a4f35;
+  --olive-600:#4e6847;
+  --olive-500:#6b7f5f;
+  --card:#ffffff;
+  --text:#162016;
+  --muted:#5f6b5c;
+  --line:rgba(25,35,25,.12);
+  --accent:#4e6847;
+  --accent-2:#b8c2a5;
+  --shadow:0 14px 40px rgba(0,0,0,.08);
+  --radius:18px;
+}
+
+*{
+  box-sizing:border-box;
+}
+
+body{
+  margin:0;
+  min-height:100vh;
+
+  display:flex;
+  justify-content:center;
+  align-items:center;
+
+  font-family:ui-sans-serif,system-ui,-apple-system,
+  "Segoe UI",Roboto,Arial;
+
+  color:var(--text);
+
+  background:
+    radial-gradient(1200px 600px at 20% 0%, rgba(78,104,71,.18), transparent 60%),
+    radial-gradient(900px 500px at 95% 10%, rgba(184,194,165,.22), transparent 55%),
+    radial-gradient(900px 600px at 15% 95%, rgba(78,104,71,.12), transparent 55%);
+}
+
+.login-card{
+  width:100%;
+  max-width:480px;
+
+  padding:30px;
+
+  background:rgba(255,255,255,.78);
+
+  border:1px solid rgba(255,255,255,.55);
+
+  border-radius:var(--radius);
+
+  backdrop-filter:blur(10px);
+
+  box-shadow:var(--shadow);
+}
+
+.brand{
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  gap:10px;
+  margin-bottom:25px;
+}
+
+.dot{
+  width:10px;
+  height:10px;
+  border-radius:50%;
+  background:linear-gradient(
+      135deg,
+      var(--accent),
+      var(--accent-2)
+  );
+}
+
+h1{
+  text-align:center;
+  color:var(--olive-900);
+  margin-bottom:5px;
+}
+
+.sub{
+  text-align:center;
+  color:var(--muted);
+  margin-bottom:25px;
+}
+
+label{
+  display:block;
+  margin-bottom:6px;
+  color:var(--muted);
+  font-size:14px;
+  font-weight:600;
+}
+
+input{
+  width:100%;
+  padding:12px;
+
+  border-radius:14px;
+
+  border:1px solid rgba(31,42,29,.14);
+
+  margin-bottom:15px;
+}
+
+input:focus{
+  outline:none;
+
+  border-color:rgba(78,104,71,.5);
+
+  box-shadow:0 0 0 4px rgba(78,104,71,.14);
+}
+
+button{
+  width:100%;
+  padding:12px;
+
+  border:none;
+
+  border-radius:999px;
+
+  font-weight:700;
+
+  cursor:pointer;
+
+  color:white;
+
+  background:
+  linear-gradient(
+      135deg,
+      var(--accent),
+      var(--olive-700)
+  );
+}
+
+.link{
+  text-align:center;
+  margin-top:20px;
+}
+
+a{
+  color:var(--accent);
+  text-decoration:none;
+  font-weight:700;
+}
+
+#mensagem{
+    margin-top: 15px;
+    padding: 12px;
+    border-radius: 8px;
+    text-align: center;
+    font-size: 14px;
+    font-weight: 600;
+}

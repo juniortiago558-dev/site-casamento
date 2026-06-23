@@ -1,0 +1,455 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Alexsander & Maria Eduarda</title>
+  <link rel="stylesheet" href="css/index.css">
+  <link rel="icon" href="data:image/svg+xml,
+  <svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'>
+    <text y='0.9em' font-size='90'>💑</text>
+  </svg>">
+</head>
+
+<body>
+  <header>
+    <div id="userPanel" class="userPanel">
+
+        <div class="userAvatar">
+            <span id="avatarLetter"></span>
+        </div>
+
+        <div class="userInfo">
+            <strong id="userName"></strong>
+            <small id="userRole"></small>
+        </div>
+
+        <button
+            class="logoutBtn"
+            onclick="logout()">
+
+            Sair
+
+        </button>
+
+    </div>
+
+    <div class="brand">
+
+      <span class="dot"></span>
+
+      <span
+        style="
+          font-weight:700;
+          color:var(--olive-900);
+        ">
+
+        Casamento
+
+      </span>
+
+      <span
+        style="
+        color:var(--muted);
+        ">
+
+        •
+      </span>
+
+      <span
+        style="
+        color:var(--muted);
+        ">
+
+        RSVP & Presentes
+
+      </span>
+
+    </div>
+
+    <h1 id="tituloCasal">
+      Alexsander & Maria Eduarda
+    </h1>
+
+    <p class="sub">
+      22/08/2026 • Fazenda Sobradinho
+    </p>
+
+    <nav>
+
+      <button
+        id="btnNavRsvp"
+        class="primary"
+        onclick="go('rsvp')">
+
+        Confirmar Presença
+
+      </button>
+
+      <button
+        id="btnNavPresentes"
+        onclick="go('presentes')">
+
+        Lista de Presentes
+
+      </button>
+
+      <button
+        id="btnNavConfirmacoesAdmin"
+        style="display:none;"
+        onclick="go('confirmacoesAdmin')">
+
+        Lista de Confirmação
+
+      </button>
+
+    </nav>
+
+
+  </header>
+
+  <main class="wrap">
+
+  <!-- RSVP -->
+
+  <section
+      id="rsvp"
+      class="grid">
+
+      <div class="card">
+
+          <h2>
+              Confirmação de Presença
+          </h2>
+
+          <p class="sub">
+              Por favor confirme sua presença.
+          </p>
+
+          <!-- CONTAGEM -->
+
+          <div
+              class="countdownWrap"
+              aria-label="Contagem regressiva">
+
+              <div class="pill">
+                  Faltam
+              </div>
+
+              <div class="countdownGrid">
+
+                  <div class="cdBox">
+                      <div
+                          class="cdNum"
+                          id="cdDias">
+                          —
+                      </div>
+
+                      <div class="cdLbl">
+                          Dias
+                      </div>
+                  </div>
+
+                  <div class="cdBox">
+                      <div
+                          class="cdNum"
+                          id="cdHoras">
+                          —
+                      </div>
+
+                      <div class="cdLbl">
+                          Horas
+                      </div>
+                  </div>
+
+                  <div class="cdBox">
+                      <div
+                          class="cdNum"
+                          id="cdMin">
+                          —
+                      </div>
+
+                      <div class="cdLbl">
+                          Minutos
+                      </div>
+                  </div>
+
+                  <div class="cdBox">
+                      <div
+                          class="cdNum"
+                          id="cdSeg">
+                          —
+                      </div>
+
+                      <div class="cdLbl">
+                          Segundos
+                      </div>
+                  </div>
+
+              </div>
+
+              <p
+                  class="mini"
+                  id="cdTexto">
+              </p>
+
+          </div>
+
+          <!-- LOCAL -->
+
+          <div class="howBox">
+
+              <div class="pill">
+                  Como chegar
+              </div>
+
+              <p
+                  id="localNome"
+                  style="
+                  margin:10px 0 0;
+                  font-weight:800;
+                  color:var(--olive-900);
+                  ">
+              </p>
+
+              <p
+                  id="enderecoTexto"
+                  class="mini">
+              </p>
+
+              <div
+                  class="actions"
+                  style="
+                  margin-top:10px;
+                  ">
+
+                  <button
+                      type="button"
+                      class="primary"
+                      onclick="abrirMapa('google')">
+
+                      Google Maps
+
+                  </button>
+
+                  <button
+                      type="button"
+                      onclick="abrirMapa('waze')">
+
+                      Waze
+
+                  </button>
+
+                  <button
+                      type="button"
+                      onclick="copiarEndereco()">
+
+                      Copiar endereço
+
+                  </button>
+
+              </div>
+
+          </div>
+
+          <hr
+              style="
+              border:none;
+              border-top:1px solid rgba(31,42,29,.10);
+              margin:16px 0;
+              ">
+
+          <!-- FORM RSVP -->
+
+          <form id="rsvpForm">
+
+              <div class="row">
+
+                  <div>
+
+                      <label>
+                          Você vai?
+                      </label>
+
+                      <select
+                          name="vai"
+                          required>
+
+                          <option
+                              value=""
+                              selected
+                              disabled>
+
+                              Selecione
+
+                          </option>
+
+                          <option>
+                              Vou
+                          </option>
+
+                          <option>
+                              Não vou
+                          </option>
+
+                      </select>
+
+                  </div>
+
+                  <div>
+
+                      <label>
+                          Quantidade de pessoas
+                      </label>
+
+                      <input
+                          name="qtd"
+                          type="number"
+                          min="1"
+                          max="10"
+                          value="1"
+                          required>
+
+                  </div>
+
+              </div>
+
+              <label>
+                  Acompanhantes
+              </label>
+
+              <textarea
+                  name="acomp"
+                  placeholder="Informe os nomes dos acompanhantes"></textarea>
+
+              <label>
+                  Observações
+              </label>
+
+              <textarea
+                  name="obs"
+                  placeholder="Restrições alimentares, acessibilidade etc."></textarea>
+
+              <div class="actions">
+
+                  <button
+                      class="primary"
+                      type="submit">
+
+                      Enviar confirmação
+
+                  </button>
+
+              </div>
+
+              <div
+                  id="rsvpOk"
+                  class="success"
+                  style="display:none;">
+
+                  Presença registrada com sucesso!
+
+              </div>
+
+          </form>
+
+      </div>
+
+  </section>
+
+  <!-- PRESENTES -->
+
+  <section
+      id="presentes"
+      style="display:none;">
+
+      <div class="card">
+
+          <h2>
+              Lista de Presentes
+          </h2>
+
+          <div class="note">
+
+              <b>Importante:</b>
+
+              Escolha apenas um presente.
+
+              Após reservar, o item ficará indisponível
+              para os demais convidados.
+
+          </div>
+
+          <div class="filtrosPresentes">
+
+              <input
+                  type="text"
+                  id="filtroBusca"
+                  placeholder="Buscar por nome ou categoria"
+                  oninput="aplicarFiltrosPresentes()">
+
+              <label class="filtroDisponivelLabel">
+
+                  <input
+                      type="checkbox"
+                      id="filtroDisponivel"
+                      onchange="aplicarFiltrosPresentes()">
+
+                  Mostrar apenas disponíveis
+
+              </label>
+
+          </div>
+
+          <div
+              id="listaPresentes"
+              class="items">
+
+          </div>
+
+          <div
+              id="secaoOutroPresente">
+
+          </div>
+
+      </div>
+
+  </section>
+
+  <!-- LISTA DE CONFIRMAÇÃO (ADMIN) -->
+
+  <section
+      id="confirmacoesAdmin"
+      style="display:none;">
+
+      <div class="card">
+
+          <h2>
+              Lista de Confirmação
+          </h2>
+
+          <div
+              id="tabelaConfirmacoesAdmin"
+              style="overflow-x:auto;">
+
+          </div>
+
+      </div>
+
+  </section>
+
+  <footer>
+
+      Com carinho,
+
+      Alexsander & Maria Eduarda
+
+  </footer>
+  
+
+  </main>
+
+  <script src="js/index.js"></script>
+
+</body>
+</html>
