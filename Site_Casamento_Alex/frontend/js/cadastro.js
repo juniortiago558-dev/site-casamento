@@ -1,5 +1,5 @@
 // TROQUE pela URL do seu backend no Render depois do deploy
-const API_URL = "http://localhost:3000";
+const API_URL = "https://site-casamento-gsp4.onrender.com";
 
 // Se já estiver logado, redireciona
 const token = localStorage.getItem("token");
