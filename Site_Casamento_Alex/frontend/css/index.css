@@ -407,6 +407,8 @@ footer{ text-align:center; color: var(--muted); padding: 22px 0 8px; font-size:1
 
   .filtroDisponivelLabel {
     flex: 1 1 100%;
+    white-space: normal;
+    min-width: 0;
   }
 
   /* Tabela do admin: fonte menor + permite rolagem
