@@ -4,7 +4,7 @@
 
 // TROQUE pela URL do seu backend no Render depois do deploy
 // Exemplo: "https://casamento-backend.onrender.com"
-const API_URL = "http://localhost:3000";
+const API_URL = "https://site-casamento-gsp4.onrender.com";
 
 const token = localStorage.getItem("token");
 
@@ -20,7 +20,7 @@ try {
 
 const WEDDING_DATE_ISO = "2026-08-22T00:00:00-03:00";
 const LOCAL_NOME = "Fazenda Sobradinho";
-const LOCAL_ENDERECO = "Fazenda Sobradinho, Estrada CT. João Havelange, Pinheiral - RJ, 27197-000, Brasil";
+const LOCAL_ENDERECO = "Fazenda Sobradinho, (COLOQUE AQUI O ENDEREÇO COMPLETO), Brasil";
 
 // =========================================
 // PROTEÇÃO
